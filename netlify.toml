@@ -1,4 +1,0 @@
-[[redirect]]
-  from = "/*"
-  to = "/index.ejs"
-  status = 200

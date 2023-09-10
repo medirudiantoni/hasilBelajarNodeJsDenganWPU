@@ -1,15 +1,14 @@
 const mongoose = require('mongoose');
 
-const dbUrl = 'mongodb+srv://medirudiantoni:Mahastry15%25@cluster0.ozxm4vq.mongodb.net/mahasiswa';
-
-mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://medi3:Danglupa89@cluster0.y9nvl.mongodb.net/?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+});
 
 const db = mongoose.connection;
 
-db.on('error', (error) => {
-  console.error('Koneksi MongoDB gagal:', error);
-});
-
+db.on('error', console.error.bind(console, 'Koneksi ke database gagal:'));
 db.once('open', () => {
-  console.log('Terhubung ke MongoDB');
+    console.log('Terhubung ke MongoDB Atlas');
 });
